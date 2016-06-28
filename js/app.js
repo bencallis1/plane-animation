@@ -21,7 +21,6 @@ function init() {
 
     // add the lights
     createLights();
-
     // add the objects
     createPlane();
     createSea();
@@ -253,7 +252,7 @@ Sky = function(){
     this.mesh = new THREE.Object3D();
 
     // choose a number of clouds to be scattered in the sky
-    this.nClouds = 20;
+    this.nClouds = 23;
 
     // To distribute the clouds consistently,
     // we need to place them according to a uniform angle
@@ -282,13 +281,13 @@ Sky = function(){
         c.mesh.position.z = -400-Math.random()*400;
 
         // we also set a random scale for each cloud
-        var s = 1+Math.random()*2;
+        var s = 2+Math.random()*2;
         c.mesh.scale.set(s,s,s);
 
         // do not forget to add the mesh of each cloud in the scene
         this.mesh.add(c.mesh);
     }
-}
+};
 
 // Now we instantiate the sky and push its center a bit
 // towards the bottom of the screen
